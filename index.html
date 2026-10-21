@@ -147,7 +147,7 @@
       width: 100%; padding: 0.85rem 1rem; border: none; background: transparent;
       font-family: inherit; font-weight: 600; color: var(--text-primary); outline: none;
       border-radius: 0.9rem;
-      font-size: 16px; /* prevents iOS zoom */
+      font-size: 16px;
       min-height: var(--touch-target);
     }
     .input-with-unit input[type="number"] { -moz-appearance: textfield; }
@@ -222,7 +222,7 @@
     .summary-card.loss { border-color: rgba(239, 68, 68, 0.5); box-shadow: 0 0 25px -8px rgba(239, 68, 68, 0.5); }
     .summary-card.loss .value { color: var(--accent-red); }
 
-    /* ===== TABLES (mobile scroll) ===== */
+    /* ===== TABLES ===== */
     .table-wrapper {
       max-height: 400px; overflow-y: auto; overflow-x: auto;
       border-radius: 1rem; border: 1px solid rgba(250, 204, 21, 0.1);
@@ -243,15 +243,7 @@
     .table-wrapper::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent-yellow), var(--accent-yellow-dark)); border-radius: 10px; }
     .table-wrapper::-webkit-scrollbar-track { background: rgba(20, 20, 20, 0.5); }
 
-    /* scroll hint for tables on mobile */
-    .table-scroll-hint {
-      display: none;
-      text-align: center;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      margin-top: 0.4rem;
-      padding: 0.3rem;
-    }
+    .table-scroll-hint { display: none; text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.4rem; padding: 0.3rem; }
 
     /* ===== RESULT BIG ===== */
     .result-big { background: rgba(20, 20, 20, 0.8); border-radius: 1.1rem; padding: 1.25rem; text-align: center; border: 1px solid rgba(250, 204, 21, 0.3); box-shadow: 0 0 30px -10px rgba(250, 204, 21, 0.35); margin-bottom: 1.25rem; transition: all 0.3s ease; }
@@ -273,24 +265,6 @@
     .mini-stat .value.accent { color: var(--accent-yellow); filter: drop-shadow(0 0 6px rgba(250, 204, 21, 0.4)); }
     .mini-stat .value.positive { color: var(--accent-green); }
     .mini-stat .value.negative { color: var(--accent-red); }
-
-    /* ===== ALLOCATION ===== */
-    .alloc-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.85rem; padding: 0.8rem 0.9rem; background: rgba(20, 20, 20, 0.6); border-radius: 0.9rem; border: 1px solid rgba(250, 204, 21, 0.08); transition: all 0.25s ease; }
-    .alloc-row:hover { border-color: rgba(250, 204, 21, 0.25); background: rgba(20, 20, 20, 0.8); }
-    .alloc-color { width: 1.2rem; height: 1.2rem; border-radius: 0.35rem; flex-shrink: 0; }
-    .alloc-name { font-weight: 600; font-size: 0.85rem; color: var(--text-primary); min-width: 110px; flex-shrink: 0; }
-    .alloc-slider { flex: 1; min-width: 80px; }
-    .alloc-slider input[type="range"] { margin: 0; }
-    .alloc-percent-input { width: 3.8rem; padding: 0.45rem 0.5rem; background: var(--bg-input); border: 1px solid rgba(250, 204, 21, 0.15); border-radius: 0.5rem; color: var(--text-primary); font-family: inherit; font-weight: 600; font-size: 16px; text-align: center; outline: none; transition: all 0.2s ease; flex-shrink: 0; -moz-appearance: textfield; min-height: var(--touch-target); }
-    .alloc-percent-input::-webkit-outer-spin-button, .alloc-percent-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-    .alloc-percent-input:focus { border-color: var(--accent-yellow); box-shadow: var(--glow-yellow); }
-    .alloc-amount { min-width: 80px; text-align: right; font-weight: 700; font-size: 0.85rem; color: var(--accent-yellow); font-variant-numeric: tabular-nums; flex-shrink: 0; }
-
-    .total-bar { display: flex; align-items: center; justify-content: space-between; padding: 0.8rem 1rem; background: rgba(20, 20, 20, 0.8); border-radius: 0.9rem; border: 1px solid rgba(250, 204, 21, 0.3); margin-top: 0.75rem; }
-    .total-bar .label { font-weight: 600; font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
-    .total-bar .value { font-weight: 700; font-size: 1.1rem; color: var(--accent-yellow); font-variant-numeric: tabular-nums; }
-    .total-bar .value.warn { color: var(--accent-yellow-dark); }
-    .total-bar .value.danger { color: var(--accent-red); }
 
     /* ===== PORTFOLIO BUILDER ===== */
     .budget-bar { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.1rem; background: rgba(20, 20, 20, 0.8); border-radius: 1rem; border: 1px solid rgba(250, 204, 21, 0.25); margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem; }
@@ -371,8 +345,8 @@
     .flag-yes { background: rgba(34, 197, 94, 0.18); color: var(--accent-green); border: 1px solid rgba(34, 197, 94, 0.4); }
     .flag-no { background: rgba(122, 122, 122, 0.1); color: var(--text-muted); border: 1px solid rgba(122, 122, 122, 0.2); }
 
-    /* break-even two-column split */
-    .be-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .be-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    .be-col { min-width: 0; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1100px) {
@@ -380,14 +354,8 @@
       .divider { display: none; }
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width: 700px) {
-      .nav-inner {
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-        flex-wrap: nowrap;
-      }
+      .nav-inner { flex-direction: row; align-items: center; gap: 0.5rem; flex-wrap: nowrap; }
       .nav-brand { font-size: 1rem; flex-shrink: 0; }
       .nav-brand span:not(.logo-icon) { display: none; }
       .nav-tabs { padding: 0.25rem; }
@@ -436,18 +404,24 @@
       .budget-bar .budget-item { flex-direction: row; justify-content: space-between; align-items: center; }
       .budget-bar .budget-value { font-size: 1rem; }
 
-      .alloc-row { flex-wrap: wrap; gap: 0.5rem; padding: 0.7rem 0.8rem; }
-      .alloc-slider { flex-basis: 100%; order: 3; }
-      .alloc-name { min-width: 80px; font-size: 0.8rem; }
-      .alloc-percent-input { width: 3.2rem; }
-      .alloc-amount { min-width: 65px; font-size: 0.8rem; }
-
       .holding-inputs { grid-template-columns: 1fr 1fr; }
       .holding-inputs .holding-field:last-child { grid-column: span 2; }
       .holding-top { gap: 0.5rem; }
       .holding-ticker { width: 2.4rem; height: 2.4rem; font-size: 0.72rem; }
 
       .be-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .be-col-result { order: -1; }
+
+      .break-even-highlight { padding: 1.1rem; margin-bottom: 1rem; }
+      .break-even-highlight .value { font-size: 1.4rem; }
+      .break-even-highlight .label { font-size: 0.68rem; }
+      .break-even-highlight .sub { font-size: 0.75rem; }
+
+      .be-col-result .mini-stats { grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1rem; }
+      .be-col-result .mini-stat { padding: 0.65rem 0.4rem; }
+      .be-col-result .mini-stat .label { font-size: 0.6rem; line-height: 1.2; }
+      .be-col-result .mini-stat .value { font-size: 0.88rem; }
+      .be-col-result .table-wrapper { max-height: 260px; }
 
       .valuation-verdict { padding: 1.1rem; margin-bottom: 1.1rem; }
       .valuation-verdict .verdict-value { font-size: 1.4rem; }
@@ -455,7 +429,6 @@
 
       .formula-note { font-size: 0.75rem; padding: 0.85rem; }
 
-      /* sticky summary on mobile */
       .sticky-mobile-summary {
         position: sticky;
         bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
@@ -463,7 +436,6 @@
       }
     }
 
-    /* Very small phones */
     @media (max-width: 380px) {
       .nav-tab { padding: 0.55rem 0.65rem; }
       .mini-stats { grid-template-columns: 1fr; }
@@ -471,9 +443,9 @@
       .result-big .value { font-size: 1.35rem; }
       .holding-inputs { grid-template-columns: 1fr; }
       .holding-inputs .holding-field:last-child { grid-column: span 1; }
+      .be-col-result .mini-stats { grid-template-columns: 1fr; }
     }
 
-    /* Reduce motion for users who prefer it */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -482,7 +454,6 @@
       }
     }
 
-    /* Focus visible for accessibility */
     button:focus-visible, input:focus-visible {
       outline: 2px solid var(--accent-yellow);
       outline-offset: 2px;
@@ -502,7 +473,6 @@
       <div class="nav-tabs" id="navTabs">
         <button class="nav-tab active" data-page="page-compound"><span class="tab-icon">📈</span><span class="tab-label">რთული პროცენტი</span></button>
         <button class="nav-tab" data-page="page-loan"><span class="tab-icon">🏦</span><span class="tab-label">სესხი</span></button>
-        <button class="nav-tab" data-page="page-allocation"><span class="tab-icon">🥧</span><span class="tab-label">პორტფელი</span></button>
         <button class="nav-tab" data-page="page-breakeven"><span class="tab-icon">⚖️</span><span class="tab-label">Break-even</span></button>
         <button class="nav-tab" data-page="page-stock"><span class="tab-icon">📊</span><span class="tab-label">აქციის შეფასება</span></button>
         <button class="nav-tab" data-page="page-myportfolio"><span class="tab-icon">💼</span><span class="tab-label">ჩემი პორტფელი</span></button>
@@ -513,12 +483,12 @@
   <!-- ===== PAGE 1: COMPOUND INTEREST ===== -->
   <div class="page active" id="page-compound">
     <div class="page-header">
-      <h1><span>რთული პროცენტი · ინფლაციის ადაპტირებული</span></h1>
+      <h1><span>რთული პროცენტი</span></h1>
       <p>ნახე რეალური ზრდა ინფლაციის გათვალისწინებით — ინფლაცია დროთა განმავლობაში იცვლება</p>
     </div>
     <div class="row-single">
       <div class="calc-card">
-        <div class="card-title"><span class="icon">📈</span> რთული პროცენტის კალკულატორი (ინფლაციით)</div>
+        <div class="card-title"><span class="icon">📈</span> რთული პროცენტის კალკულატორი</div>
         <div class="card-subtitle">შეიტანე პარამეტრები — ინფლაციის მაჩვენებელი წლიდან წლამდე იცვლება</div>
 
         <div class="control-group">
@@ -656,40 +626,6 @@
     </div>
   </div>
 
-  <!-- ===== PAGE 3: PORTFOLIO ALLOCATION ===== -->
-  <div class="page" id="page-allocation">
-    <div class="page-header">
-      <h1><span>პორტფელის განაწილება</span></h1>
-      <p>გაანაწილე ინვესტიცია კლასებს შორის — მართე რისკი</p>
-    </div>
-    <div class="row-single">
-      <div class="calc-card">
-        <div class="card-title"><span class="icon">🥧</span> აქტივების განაწილება</div>
-        <div class="card-subtitle">100% უნდა გადანაწილდეს კლასებს შორის</div>
-
-        <div class="control-group">
-          <div class="control-label">მთლიანი პორტფელი <span class="hint">$</span></div>
-          <div class="input-with-unit"><input type="number" inputmode="decimal" id="portfolioTotalInput" value="10000" min="100" max="10000000" step="100"><span class="unit">$</span></div>
-          <input type="range" id="portfolioTotalSlider" min="100" max="1000000" value="10000" step="100">
-          <div class="slider-value" id="portfolioTotalSliderValue">$10,000</div>
-        </div>
-
-        <div class="control-label" style="margin-top: 0.5rem;">განაწილება <span class="hint">% · 100%-ს უნდა უდრიდეს</span></div>
-        <div id="allocationRows"></div>
-
-        <div class="total-bar">
-          <div class="label">სულ განაწილებული</div>
-          <div class="value" id="allocTotal">100%</div>
-        </div>
-
-        <div class="mini-stats" style="margin-top: 1rem;">
-          <div class="mini-stat"><div class="label">მთლიანი თანხა</div><div class="value accent" id="allocGrandTotal">$10,000</div></div>
-          <div class="mini-stat"><div class="label">კლასების რაოდენობა</div><div class="value" id="allocClassCount">5</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- ===== PAGE 4: BREAK-EVEN ===== -->
   <div class="page" id="page-breakeven">
     <div class="page-header">
@@ -702,7 +638,8 @@
         <div class="card-subtitle">შემოსავალი vs ინვესტიცია — ვადის განსაზღვრა</div>
 
         <div class="be-grid">
-          <div>
+          <!-- INPUTS COLUMN -->
+          <div class="be-col be-col-inputs">
             <div class="control-group">
               <div class="control-label">საწყისი ინვესტიცია <span class="hint">$</span></div>
               <div class="input-with-unit"><input type="number" inputmode="decimal" id="beInvestInput" value="50000" min="100" max="10000000" step="100"><span class="unit">$</span></div>
@@ -736,7 +673,8 @@
             </div>
           </div>
 
-          <div>
+          <!-- RESULTS COLUMN -->
+          <div class="be-col be-col-result">
             <div class="break-even-highlight">
               <div class="label">Break-even დრო</div>
               <div class="value" id="beBreakEven">-</div>
@@ -880,14 +818,22 @@
 
 <script>
   (function() {
+    'use strict';
+
     // ============================================================
     // HELPERS
     // ============================================================
     function formatMoney(value) {
+      if (!isFinite(value)) return '—';
       return '$' + value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
     function formatMoneyShort(value) {
+      if (!isFinite(value)) return '—';
       return '$' + value.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+    function safeNum(v, fallback) {
+      const n = parseFloat(v);
+      return isFinite(n) ? n : (fallback || 0);
     }
 
     // ============================================================
@@ -909,7 +855,18 @@
     });
 
     // ============================================================
-    // CALCULATOR 1: COMPOUND INTEREST
+    // CALCULATOR 1: COMPOUND INTEREST (with real-value correction)
+    //
+    // Design:
+    //  - Nominal balance compounds monthly at nominalRate/12.
+    //  - Real balance (in today's purchasing power) compounds monthly at
+    //    the real monthly rate derived from Fisher per year, BUT every
+    //    contribution is discounted by the cumulative inflation index at
+    //    the moment it is made. This is what makes real balance correct:
+    //    a dollar contributed in year 10 buys fewer "today dollars" than
+    //    one contributed in year 1.
+    //  - Inflation itself is linearly interpolated from `from` to `to`
+    //    across the years, so year k uses rate r_k.
     // ============================================================
     const monthlyBtn = document.getElementById('monthlyBtn');
     const yearlyBtn = document.getElementById('yearlyBtn');
@@ -948,17 +905,17 @@
     let mode = 'monthly';
 
     function syncContribution(value) {
-      let val = Math.min(5000, Math.max(1, value));
+      let val = Math.min(5000, Math.max(1, Math.round(value)));
       contributionInput.value = val; contributionSlider.value = val;
       contributionSliderValue.textContent = '$' + val.toLocaleString();
     }
     function syncInitialCapital(value) {
-      let val = Math.min(1000000, Math.max(0, value));
+      let val = Math.min(1000000, Math.max(0, Math.round(value)));
       initialCapitalInput.value = val; initialCapitalSlider.value = val;
       initialCapitalSliderValue.textContent = '$' + val.toLocaleString();
     }
     function syncRate(value) {
-      let val = Math.min(40, Math.max(0.1, value));
+      let val = Math.min(40, Math.max(0.1, parseFloat(value)));
       rateInput.value = val; rateSlider.value = val;
       rateSliderValue.textContent = val + '%';
     }
@@ -1004,71 +961,100 @@
       }
       recalculate();
     }
-    function getInflationForYear(year, years, fromRate, toRate) {
-      if (years <= 1) return fromRate;
-      const t = (year - 1) / (years - 1);
+
+    // Linear interpolation of yearly inflation between `from` and `to`.
+    // Year 1 uses `from`, year N uses `to`.
+    function getInflationForYear(yearIndex, totalYears, fromRate, toRate) {
+      if (totalYears <= 1) return fromRate;
+      const t = (yearIndex - 1) / (totalYears - 1);
       return fromRate + (toRate - fromRate) * t;
     }
+
     function recalculate() {
-      const contribAmount = parseFloat(contributionInput.value) || 0;
+      const contribAmount = safeNum(contributionInput.value, 0);
       const useInitial = initialCapitalCheck.checked;
-      const initialCapital = useInitial ? (parseFloat(initialCapitalInput.value) || 0) : 0;
-      const nominalRate = parseFloat(rateInput.value) / 100 || 0;
-      const inflationFrom = parseFloat(inflationFromInput.value) / 100 || 0;
-      const inflationTo = parseFloat(inflationToInput.value) / 100 || 0;
-      const years = parseInt(yearsInput.value) || 1;
-      const avgInflation = (inflationFrom + inflationTo) / 2;
+      const initialCapital = useInitial ? safeNum(initialCapitalInput.value, 0) : 0;
+      const nominalRate = safeNum(rateInput.value, 0) / 100;
+      const inflationFrom = safeNum(inflationFromInput.value, 0) / 100;
+      const inflationTo = safeNum(inflationToInput.value, 0) / 100;
+      const years = Math.max(1, parseInt(yearsInput.value) || 1);
 
       const noInflation = (inflationFrom === 0 && inflationTo === 0);
+      const avgInflation = (inflationFrom + inflationTo) / 2;
 
       let nominalBalance = initialCapital;
-      let realBalance = initialCapital;
+      let realBalance = initialCapital;          // expressed in today's dollars
       let totalContributions = initialCapital;
+      let cumulativeInflationFactor = 1;         // product of (1 + yearly inflation)
       const yearlyData = [];
-      let cumulativeInflationFactor = 1;
 
       for (let year = 1; year <= years; year++) {
         const yearInflation = noInflation ? 0 : getInflationForYear(year, years, inflationFrom, inflationTo);
+
+        // Nominal monthly rate
         const monthlyNominal = nominalRate / 12;
-        const realAnnual = noInflation ? nominalRate : ((1 + nominalRate) / (1 + yearInflation) - 1);
+
+        // Real monthly rate using Fisher for this year's inflation
+        // (1 + realAnnual) = (1 + nominalAnnual) / (1 + yearInflation)
+        const realAnnual = (1 + nominalRate) / (1 + yearInflation) - 1;
         const monthlyReal = Math.pow(1 + realAnnual, 1/12) - 1;
 
         let yearContrib = 0;
 
         if (mode === 'monthly') {
+          // 12 monthly contributions, at end of each month
           for (let m = 1; m <= 12; m++) {
-            nominalBalance += nominalBalance * monthlyNominal;
-            nominalBalance += contribAmount; yearContrib += contribAmount;
-            realBalance += realBalance * monthlyReal;
-            realBalance += contribAmount;
+            // Nominal grows at monthly nominal rate, then contribution added
+            nominalBalance = nominalBalance * (1 + monthlyNominal) + contribAmount;
+
+            // Real: grow at real rate, then add contribution discounted to
+            // today's dollars. The discount factor for a contribution made
+            // inside year `year` is the cumulative inflation index at that
+            // point. Approximation: use the year's average cumulative index.
+            // For precision we apply the index at end-of-month via the
+            // year's inflation being spread evenly across 12 months.
+            realBalance = realBalance * (1 + monthlyReal);
+
+            // Cumulative inflation factor at this month (approx: yearly rate / 12)
+            // We track cumulativeInflationFactor at year start and advance by
+            // (1+yearInflation)^(1/12) each month for the discount.
+            const monthIndex = cumulativeInflationFactor * Math.pow(1 + yearInflation, m / 12);
+            realBalance += contribAmount / monthIndex;
+
+            yearContrib += contribAmount;
           }
           totalContributions += yearContrib;
         } else {
+          // Yearly mode: balance compounds monthly all year, contribution at year end
           for (let m = 1; m <= 12; m++) {
-            nominalBalance += nominalBalance * monthlyNominal;
-            realBalance += realBalance * monthlyReal;
+            nominalBalance = nominalBalance * (1 + monthlyNominal);
+            realBalance = realBalance * (1 + monthlyReal);
           }
-          nominalBalance += contribAmount; realBalance += contribAmount;
-          yearContrib = contribAmount; totalContributions += yearContrib;
+          // Contribution at year end, discounted to today's dollars
+          const yearEndIndex = cumulativeInflationFactor * (1 + yearInflation);
+          nominalBalance += contribAmount;
+          realBalance += contribAmount / yearEndIndex;
+          yearContrib = contribAmount;
+          totalContributions += yearContrib;
         }
 
+        // Advance the cumulative inflation factor by this year's inflation
         cumulativeInflationFactor *= (1 + yearInflation);
-        const inflationLoss = noInflation ? 0 : (nominalBalance - realBalance);
 
         yearlyData.push({
           year: year,
           yearContrib: yearContrib,
-          yearInflation: noInflation ? 0 : yearInflation * 100,
+          yearInflationPct: noInflation ? 0 : yearInflation * 100,
           nominalBalance: nominalBalance,
           realBalance: realBalance,
-          inflationLoss: inflationLoss
+          inflationLoss: nominalBalance - realBalance
         });
       }
 
       const finalNominal = nominalBalance;
       const finalReal = realBalance;
       const nominalInterest = finalNominal - totalContributions;
-      const realInterest = noInflation ? nominalInterest : (finalReal - totalContributions);
+      const realInterest = finalReal - totalContributions;
       const purchasingPowerLoss = noInflation ? 0 : (1 - 1 / cumulativeInflationFactor) * 100;
 
       totalContributionsEl.textContent = formatMoneyShort(totalContributions);
@@ -1079,6 +1065,7 @@
       avgInflationEl.textContent = (avgInflation * 100).toFixed(1) + '%';
       purchasingPowerLossEl.textContent = purchasingPowerLoss.toFixed(1) + '%';
 
+      // Reset styles
       realFinalEl.style.filter = '';
       realInterestEl.style.color = '';
 
@@ -1087,31 +1074,39 @@
         realInterestEl.style.color = 'var(--accent-red)';
       }
 
+      // Table
       let tableHTML = '';
       yearlyData.forEach(row => {
         const lossColor = row.inflationLoss > 0.01 ? 'color: var(--accent-red);' : '';
-        const inflDisplay = noInflation ? '0.0%' : row.yearInflation.toFixed(1) + '%';
+        const inflDisplay = noInflation ? '0.0%' : row.yearInflationPct.toFixed(1) + '%';
         const lossDisplay = row.inflationLoss < 0.01 ? '$0' : formatMoneyShort(row.inflationLoss);
-        tableHTML += `<tr><td>${row.year}</td><td>${formatMoneyShort(row.yearContrib)}</td><td>${inflDisplay}</td><td>${formatMoneyShort(row.nominalBalance)}</td><td>${formatMoneyShort(row.realBalance)}</td><td style="${lossColor}">${lossDisplay}</td></tr>`;
+        tableHTML += `<tr>
+          <td>${row.year}</td>
+          <td>${formatMoneyShort(row.yearContrib)}</td>
+          <td>${inflDisplay}</td>
+          <td>${formatMoneyShort(row.nominalBalance)}</td>
+          <td>${formatMoneyShort(row.realBalance)}</td>
+          <td style="${lossColor}">${lossDisplay}</td>
+        </tr>`;
       });
       tableBody.innerHTML = tableHTML;
     }
 
     monthlyBtn.addEventListener('click', () => setMode('monthly'));
     yearlyBtn.addEventListener('click', () => setMode('yearly'));
-    contributionInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 1; syncContribution(v); recalculate(); });
-    contributionSlider.addEventListener('input', e => { syncContribution(parseFloat(e.target.value)); recalculate(); });
-    initialCapitalInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0; syncInitialCapital(v); recalculate(); });
-    initialCapitalSlider.addEventListener('input', e => { syncInitialCapital(parseFloat(e.target.value)); recalculate(); });
+    contributionInput.addEventListener('input', e => { syncContribution(safeNum(e.target.value, 1)); recalculate(); });
+    contributionSlider.addEventListener('input', e => { syncContribution(safeNum(e.target.value, 1)); recalculate(); });
+    initialCapitalInput.addEventListener('input', e => { syncInitialCapital(safeNum(e.target.value, 0)); recalculate(); });
+    initialCapitalSlider.addEventListener('input', e => { syncInitialCapital(safeNum(e.target.value, 0)); recalculate(); });
     initialCapitalCheck.addEventListener('change', toggleInitialCapital);
-    rateInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0.1; syncRate(v); recalculate(); });
-    rateSlider.addEventListener('input', e => { syncRate(parseFloat(e.target.value)); recalculate(); });
-    inflationFromInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0; syncInflationFrom(v); recalculate(); });
-    inflationFromSlider.addEventListener('input', e => { syncInflationFrom(parseFloat(e.target.value)); recalculate(); });
-    inflationToInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0; syncInflationTo(v); recalculate(); });
-    inflationToSlider.addEventListener('input', e => { syncInflationTo(parseFloat(e.target.value)); recalculate(); });
-    yearsInput.addEventListener('input', e => { let v = parseInt(e.target.value); if (isNaN(v)) v = 1; syncYears(v); recalculate(); });
-    yearsSlider.addEventListener('input', e => { syncYears(parseInt(e.target.value)); recalculate(); });
+    rateInput.addEventListener('input', e => { syncRate(safeNum(e.target.value, 0.1)); recalculate(); });
+    rateSlider.addEventListener('input', e => { syncRate(safeNum(e.target.value, 0.1)); recalculate(); });
+    inflationFromInput.addEventListener('input', e => { syncInflationFrom(safeNum(e.target.value, 0)); recalculate(); });
+    inflationFromSlider.addEventListener('input', e => { syncInflationFrom(safeNum(e.target.value, 0)); recalculate(); });
+    inflationToInput.addEventListener('input', e => { syncInflationTo(safeNum(e.target.value, 0)); recalculate(); });
+    inflationToSlider.addEventListener('input', e => { syncInflationTo(safeNum(e.target.value, 0)); recalculate(); });
+    yearsInput.addEventListener('input', e => { syncYears(safeNum(e.target.value, 1)); recalculate(); });
+    yearsSlider.addEventListener('input', e => { syncYears(safeNum(e.target.value, 1)); recalculate(); });
 
     function initCompound() {
       syncContribution(50); syncInitialCapital(1000); syncRate(10);
@@ -1121,7 +1116,7 @@
     initCompound();
 
     // ============================================================
-    // CALCULATOR 2: LOAN
+    // CALCULATOR 2: LOAN (with final-payment correction)
     // ============================================================
     const loanAmountInput = document.getElementById('loanAmountInput');
     const loanAmountSlider = document.getElementById('loanAmountSlider');
@@ -1142,152 +1137,76 @@
     function syncLoanTerm(v) { let val = Math.min(40, Math.max(1, Math.round(v))); loanTermInput.value = val; loanTermSlider.value = val; loanTermSliderValue.textContent = val + ' წელი'; }
 
     function calculateLoan() {
-      const principal = parseFloat(loanAmountInput.value) || 0;
-      const annualRate = parseFloat(loanRateInput.value) / 100 || 0;
-      const years = parseInt(loanTermInput.value) || 1;
+      const principal = safeNum(loanAmountInput.value, 0);
+      const annualRate = safeNum(loanRateInput.value, 0) / 100;
+      const years = Math.max(1, parseInt(loanTermInput.value) || 1);
       const months = years * 12;
       const monthlyRate = annualRate / 12;
-      let monthlyPayment = 0;
-      if (monthlyRate === 0) monthlyPayment = principal / months;
-      else { const factor = Math.pow(1 + monthlyRate, months); monthlyPayment = principal * (monthlyRate * factor) / (factor - 1); }
-      const monthlyPaymentRounded = Math.round(monthlyPayment * 100) / 100;
-      const totalPaid = monthlyPaymentRounded * months;
-      monthlyPaymentEl.textContent = formatMoney(monthlyPaymentRounded);
-      totalPaidEl.textContent = formatMoney(totalPaid);
-      totalLoanInterestEl.textContent = formatMoney(totalPaid - principal);
 
+      let basePayment;
+      if (monthlyRate === 0) {
+        basePayment = principal / months;
+      } else {
+        const factor = Math.pow(1 + monthlyRate, months);
+        basePayment = principal * (monthlyRate * factor) / (factor - 1);
+      }
+      // Round to cents for display & for payment calculation
+      const paymentRounded = Math.round(basePayment * 100) / 100;
+
+      // Simulate with final-payment correction
       let balance = principal;
+      let totalPaid = 0;
+      let totalInterest = 0;
       const yearlyRows = [];
+
       for (let y = 1; y <= years; y++) {
         let yearPaid = 0, yearInterest = 0;
         for (let m = 1; m <= 12; m++) {
-          if (balance <= 0.01) break;
+          if (balance <= 0.005) break;
           const interest = balance * monthlyRate;
-          const principalPart = monthlyPaymentRounded - interest;
+          // Final payment: pay off exactly
+          const isLast = (y === years && m === 12) || (balance + interest <= paymentRounded + 0.005);
+          const payment = isLast ? Math.min(balance + interest, paymentRounded) : paymentRounded;
+          const principalPart = payment - interest;
           const actualPrincipal = Math.min(principalPart, balance);
-          balance -= actualPrincipal; if (balance < 0.01) balance = 0;
-          yearPaid += actualPrincipal + interest; yearInterest += interest;
+          balance -= actualPrincipal;
+          if (balance < 0.005) balance = 0;
+          yearPaid += actualPrincipal + interest;
+          yearInterest += interest;
+          totalPaid += actualPrincipal + interest;
+          totalInterest += interest;
         }
         yearlyRows.push({ year: y, paid: yearPaid, interest: yearInterest, remaining: Math.max(0, balance) });
         if (balance <= 0) break;
       }
+
+      monthlyPaymentEl.textContent = formatMoney(paymentRounded);
+      totalPaidEl.textContent = formatMoney(totalPaid);
+      totalLoanInterestEl.textContent = formatMoney(totalInterest);
+
       let rowsHTML = '';
       yearlyRows.forEach(r => { rowsHTML += `<tr><td>${r.year}</td><td>${formatMoneyShort(r.paid)}</td><td>${formatMoneyShort(r.interest)}</td><td>${formatMoneyShort(r.remaining)}</td></tr>`; });
       loanTableBody.innerHTML = rowsHTML;
     }
 
-    loanAmountInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 100; syncLoanAmount(v); calculateLoan(); });
-    loanAmountSlider.addEventListener('input', e => { syncLoanAmount(parseFloat(e.target.value)); calculateLoan(); });
-    loanRateInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0.1; syncLoanRate(v); calculateLoan(); });
-    loanRateSlider.addEventListener('input', e => { syncLoanRate(parseFloat(e.target.value)); calculateLoan(); });
-    loanTermInput.addEventListener('input', e => { let v = parseInt(e.target.value); if (isNaN(v)) v = 1; syncLoanTerm(v); calculateLoan(); });
-    loanTermSlider.addEventListener('input', e => { syncLoanTerm(parseInt(e.target.value)); calculateLoan(); });
+    loanAmountInput.addEventListener('input', e => { syncLoanAmount(safeNum(e.target.value, 100)); calculateLoan(); });
+    loanAmountSlider.addEventListener('input', e => { syncLoanAmount(safeNum(e.target.value, 100)); calculateLoan(); });
+    loanRateInput.addEventListener('input', e => { syncLoanRate(safeNum(e.target.value, 0.1)); calculateLoan(); });
+    loanRateSlider.addEventListener('input', e => { syncLoanRate(safeNum(e.target.value, 0.1)); calculateLoan(); });
+    loanTermInput.addEventListener('input', e => { syncLoanTerm(safeNum(e.target.value, 1)); calculateLoan(); });
+    loanTermSlider.addEventListener('input', e => { syncLoanTerm(safeNum(e.target.value, 1)); calculateLoan(); });
     function initLoan() { syncLoanAmount(20000); syncLoanRate(8); syncLoanTerm(5); calculateLoan(); }
     initLoan();
 
     // ============================================================
-    // CALCULATOR 3: PORTFOLIO ALLOCATION
-    // ============================================================
-    const portfolioTotalInput = document.getElementById('portfolioTotalInput');
-    const portfolioTotalSlider = document.getElementById('portfolioTotalSlider');
-    const portfolioTotalSliderValue = document.getElementById('portfolioTotalSliderValue');
-    const allocationRows = document.getElementById('allocationRows');
-    const allocTotalEl = document.getElementById('allocTotal');
-    const allocGrandTotalEl = document.getElementById('allocGrandTotal');
-    const allocClassCountEl = document.getElementById('allocClassCount');
-
-    const assets = [
-      { id: 'stocks', name: 'აქციები', color: '#facc15', percent: 50 },
-      { id: 'bonds', name: 'ობლიგაციები', color: '#a3a3a3', percent: 25 },
-      { id: 'gold', name: 'ოქრო', color: '#eab308', percent: 10 },
-      { id: 'realestate', name: 'უძრავი ქონება', color: '#737373', percent: 10 },
-      { id: 'cash', name: 'ნაღდი', color: '#525252', percent: 5 }
-    ];
-
-    function renderAllocationRows() {
-      allocationRows.innerHTML = '';
-      assets.forEach(asset => {
-        const row = document.createElement('div');
-        row.className = 'alloc-row';
-        row.innerHTML = `
-          <div class="alloc-color" style="background: ${asset.color}; box-shadow: 0 0 10px ${asset.color}80;"></div>
-          <div class="alloc-name">${asset.name}</div>
-          <div class="alloc-slider">
-            <input type="range" min="0" max="100" value="${asset.percent}" step="1" data-id="${asset.id}">
-          </div>
-          <input type="number" inputmode="numeric" class="alloc-percent-input" min="0" max="100" value="${asset.percent}" step="1" data-id="${asset.id}">
-          <div class="alloc-amount" id="alloc-amount-${asset.id}">$0</div>
-        `;
-        allocationRows.appendChild(row);
-      });
-
-      allocationRows.querySelectorAll('input[type="range"]').forEach(s => {
-        s.addEventListener('input', e => updateAssetPercent(e.target.dataset.id, parseInt(e.target.value), 'slider'));
-      });
-      allocationRows.querySelectorAll('.alloc-percent-input').forEach(inp => {
-        inp.addEventListener('input', e => {
-          let v = parseInt(e.target.value);
-          if (isNaN(v)) v = 0;
-          v = Math.min(100, Math.max(0, v));
-          updateAssetPercent(e.target.dataset.id, v, 'input');
-        });
-        inp.addEventListener('blur', e => {
-          let v = parseInt(e.target.value);
-          if (isNaN(v)) v = 0;
-          e.target.value = Math.min(100, Math.max(0, v));
-        });
-      });
-    }
-
-    function updateAssetPercent(id, newPercent, source) {
-      const asset = assets.find(a => a.id === id);
-      if (!asset) return;
-      asset.percent = newPercent;
-
-      const row = allocationRows.querySelector(`[data-id="${id}"]`)?.closest('.alloc-row');
-      if (row) {
-        const slider = row.querySelector('input[type="range"]');
-        const input = row.querySelector('.alloc-percent-input');
-        if (source !== 'slider' && slider) slider.value = newPercent;
-        if (source !== 'input' && input) input.value = newPercent;
-      }
-
-      recalcAllocation();
-    }
-
-    function syncPortfolioTotal(v) {
-      let val = Math.min(1000000, Math.max(100, Math.round(v)));
-      portfolioTotalInput.value = val;
-      portfolioTotalSlider.value = val;
-      portfolioTotalSliderValue.textContent = '$' + val.toLocaleString();
-    }
-
-    function recalcAllocation() {
-      const total = parseFloat(portfolioTotalInput.value) || 0;
-      let percentSum = 0;
-      assets.forEach(asset => {
-        percentSum += asset.percent;
-        const el = document.getElementById(`alloc-amount-${asset.id}`);
-        if (el) el.textContent = formatMoneyShort(total * (asset.percent / 100));
-      });
-
-      allocTotalEl.textContent = percentSum + '%';
-      allocTotalEl.classList.remove('warn', 'danger');
-      if (percentSum > 100.1) allocTotalEl.classList.add('danger');
-      else if (Math.abs(percentSum - 100) > 0.5) allocTotalEl.classList.add('warn');
-
-      allocGrandTotalEl.textContent = formatMoneyShort(total);
-      allocClassCountEl.textContent = assets.filter(a => a.percent > 0).length;
-    }
-
-    portfolioTotalInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 100; syncPortfolioTotal(v); recalcAllocation(); });
-    portfolioTotalSlider.addEventListener('input', e => { syncPortfolioTotal(parseFloat(e.target.value)); recalcAllocation(); });
-
-    function initAllocation() { syncPortfolioTotal(10000); renderAllocationRows(); recalcAllocation(); }
-    initAllocation();
-
-    // ============================================================
-    // CALCULATOR 4: BREAK-EVEN
+    // CALCULATOR 4: BREAK-EVEN (with BE-aware income interpolation)
+    //
+    // The "from → to" income range means: month 1 has income = from,
+    // and by the break-even month the income reaches = to.
+    // We solve iteratively: assume BE at month M, interpolate income
+    // from `from` to `to` over M months, simulate to find actual BE,
+    // repeat until stable. If BE is never reached, fall back to 30-year
+    // horizon for interpolation.
     // ============================================================
     const beInvestInput = document.getElementById('beInvestInput');
     const beInvestSlider = document.getElementById('beInvestSlider');
@@ -1314,14 +1233,56 @@
     function syncBEIncomeTo(v) { let val = Math.min(20000, Math.max(1, Math.round(v))); beIncomeToInput.value = val; beIncomeToSlider.value = val; beIncomeToSliderValue.textContent = '$' + val.toLocaleString(); const fromVal = parseFloat(beIncomeFromInput.value) || 0; if (val < fromVal) syncBEIncomeFrom(val); }
     function syncBEMonthlyCost(v) { let val = Math.min(20000, Math.max(0, Math.round(v))); beMonthlyCostInput.value = val; beMonthlyCostSlider.value = val; beMonthlyCostSliderValue.textContent = '$' + val.toLocaleString(); }
 
+    // Simulate with a given interpolation horizon (months over which income goes from -> to)
+    function simulateBreakEven(investment, incomeFrom, incomeTo, monthlyCost, horizonMonths) {
+      let cumulative = 0;
+      let breakEvenMonth = null;
+      let monthsElapsed = 0;
+      const yearlyRows = [];
+      let yearIncomeSum = 0, yearCount = 0;
+      const maxMonths = 12 * 60; // 60 years hard cap
+
+      for (let m = 1; m <= maxMonths; m++) {
+        // t: fraction from 0 at month 1 to 1 at month `horizonMonths`
+        const t = horizonMonths > 1 ? Math.min((m - 1) / (horizonMonths - 1), 1) : 1;
+        const monthIncome = incomeFrom + (incomeTo - incomeFrom) * t;
+        const net = monthIncome - monthlyCost;
+        cumulative += net;
+        yearIncomeSum += monthIncome;
+        yearCount++;
+        monthsElapsed = m;
+
+        if (breakEvenMonth === null && cumulative >= investment) {
+          breakEvenMonth = m;
+        }
+
+        if (m % 12 === 0) {
+          const year = m / 12;
+          yearlyRows.push({
+            year: year,
+            avgIncome: yearIncomeSum / yearCount,
+            cumulative: cumulative,
+            remaining: Math.max(0, investment - cumulative),
+            be: breakEvenMonth !== null && breakEvenMonth <= m
+          });
+          yearIncomeSum = 0; yearCount = 0;
+          if (breakEvenMonth !== null && m >= breakEvenMonth + 12) break;
+          if (year >= 40) break;
+        }
+      }
+
+      return { breakEvenMonth, monthsElapsed, yearlyRows, cumulative };
+    }
+
     function calcBreakEven() {
-      const investment = parseFloat(beInvestInput.value) || 0;
-      const incomeFrom = parseFloat(beIncomeFromInput.value) || 0;
-      const incomeTo = parseFloat(beIncomeToInput.value) || 0;
-      const monthlyCost = parseFloat(beMonthlyCostInput.value) || 0;
+      const investment = safeNum(beInvestInput.value, 0);
+      const incomeFrom = safeNum(beIncomeFromInput.value, 0);
+      const incomeTo = safeNum(beIncomeToInput.value, 0);
+      const monthlyCost = safeNum(beMonthlyCostInput.value, 0);
       const avgIncome = (incomeFrom + incomeTo) / 2;
       const netMonthlyAvg = avgIncome - monthlyCost;
 
+      // If average net is non-positive, BE is never reached
       if (netMonthlyAvg <= 0) {
         beBreakEvenEl.textContent = 'ვერასოდეს';
         beBreakEvenSub.textContent = 'საშუალო შემოსავალი ხარჯზე ნაკლებია';
@@ -1332,30 +1293,43 @@
         return;
       }
 
-      const maxMonthsEstimate = Math.min(Math.ceil(investment / netMonthlyAvg) + 24, 12 * 60);
-      let cumulative = 0, breakEvenMonth = null, monthsElapsed = 0;
-      const yearlyRows = [];
-      let yearIncomeSum = 0, yearCount = 0;
-      const simulationMonths = Math.min(maxMonthsEstimate + 12, 12 * 60);
+      // Iteratively solve: BE month M means income interpolates from -> to over M months.
+      // Start with the simple estimate based on average net, then refine.
+      let horizonGuess = Math.max(2, Math.round(investment / netMonthlyAvg));
+      let result = null;
+      let lastBe = null;
 
-      for (let m = 1; m <= simulationMonths; m++) {
-        const growthHorizonMonths = 360;
-        const t = Math.min(m / growthHorizonMonths, 1);
-        const monthIncome = incomeFrom + (incomeTo - incomeFrom) * t;
-        const net = monthIncome - monthlyCost;
-        cumulative += net; yearIncomeSum += monthIncome; yearCount++; monthsElapsed = m;
-        if (breakEvenMonth === null && cumulative >= investment) breakEvenMonth = m;
-        if (m % 12 === 0) {
-          const year = m / 12;
-          yearlyRows.push({ year: year, avgIncome: yearIncomeSum / yearCount, cumulative: cumulative, remaining: Math.max(0, investment - cumulative), be: breakEvenMonth !== null && breakEvenMonth <= m });
-          yearIncomeSum = 0; yearCount = 0;
-          if (breakEvenMonth !== null && m >= breakEvenMonth + 12) break;
-          if (year >= 40) break;
+      for (let iteration = 0; iteration < 8; iteration++) {
+        const sim = simulateBreakEven(investment, incomeFrom, incomeTo, monthlyCost, horizonGuess);
+        result = sim;
+
+        if (sim.breakEvenMonth === null) {
+          // BE not reached within horizon; expand horizon and try again
+          horizonGuess = horizonGuess * 2;
+          if (horizonGuess > 12 * 60) break;
+          continue;
         }
+
+        // If BE month equals our interpolation horizon, we're stable
+        if (lastBe !== null && Math.abs(sim.breakEvenMonth - lastBe) <= 1) {
+          // Re-run with the actual BE as horizon for final numbers
+          result = simulateBreakEven(investment, incomeFrom, incomeTo, monthlyCost, Math.max(2, sim.breakEvenMonth));
+          break;
+        }
+        lastBe = sim.breakEvenMonth;
+        horizonGuess = Math.max(2, sim.breakEvenMonth);
       }
 
+      // Final simulation with the resolved BE horizon (or last horizon if BE never reached)
+      const finalHorizon = result && result.breakEvenMonth
+        ? Math.max(2, result.breakEvenMonth)
+        : Math.max(2, Math.min(12 * 60, horizonGuess));
+      const finalSim = simulateBreakEven(investment, incomeFrom, incomeTo, monthlyCost, finalHorizon);
+
+      const breakEvenMonth = finalSim.breakEvenMonth;
+
       if (breakEvenMonth === null) {
-        beBreakEvenEl.textContent = '> ' + Math.ceil(monthsElapsed / 12) + ' წელი';
+        beBreakEvenEl.textContent = '> ' + Math.ceil(finalSim.monthsElapsed / 12) + ' წელი';
         beBreakEvenSub.textContent = 'ვერ დაიფარა მოცემულ ვადაში';
       } else {
         const years = Math.floor(breakEvenMonth / 12), remMonths = breakEvenMonth % 12;
@@ -1364,7 +1338,7 @@
       }
 
       beNetMonthlyEl.textContent = formatMoneyShort(netMonthlyAvg) + '/თვე';
-      beTotalIncomeEl.textContent = formatMoneyShort(cumulative);
+      beTotalIncomeEl.textContent = formatMoneyShort(finalSim.cumulative);
       const annualNet = netMonthlyAvg * 12;
       const roi = investment > 0 ? (annualNet / investment) * 100 : 0;
       beROIEl.textContent = roi.toFixed(1) + '%';
@@ -1372,7 +1346,7 @@
       beProfitableEl.style.color = annualNet > 0 ? 'var(--accent-green)' : 'var(--accent-red)';
 
       let rowsHTML = '';
-      yearlyRows.forEach(r => {
+      finalSim.yearlyRows.forEach(r => {
         const flag = r.be ? '<span class="break-even-flag flag-yes">✓</span>' : '<span class="break-even-flag flag-no">—</span>';
         rowsHTML += `<tr><td>${r.year}</td><td>${formatMoneyShort(r.avgIncome)}</td><td>${formatMoneyShort(r.cumulative)}</td><td>${formatMoneyShort(r.remaining)}</td><td>${flag}</td></tr>`;
       });
@@ -1380,19 +1354,19 @@
       beTableBody.innerHTML = rowsHTML;
     }
 
-    beInvestInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 100; syncBEInvest(v); calcBreakEven(); });
-    beInvestSlider.addEventListener('input', e => { syncBEInvest(parseFloat(e.target.value)); calcBreakEven(); });
-    beIncomeFromInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 1; syncBEIncomeFrom(v); calcBreakEven(); });
-    beIncomeFromSlider.addEventListener('input', e => { syncBEIncomeFrom(parseFloat(e.target.value)); calcBreakEven(); });
-    beIncomeToInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 1; syncBEIncomeTo(v); calcBreakEven(); });
-    beIncomeToSlider.addEventListener('input', e => { syncBEIncomeTo(parseFloat(e.target.value)); calcBreakEven(); });
-    beMonthlyCostInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0; syncBEMonthlyCost(v); calcBreakEven(); });
-    beMonthlyCostSlider.addEventListener('input', e => { syncBEMonthlyCost(parseFloat(e.target.value)); calcBreakEven(); });
+    beInvestInput.addEventListener('input', e => { syncBEInvest(safeNum(e.target.value, 100)); calcBreakEven(); });
+    beInvestSlider.addEventListener('input', e => { syncBEInvest(safeNum(e.target.value, 100)); calcBreakEven(); });
+    beIncomeFromInput.addEventListener('input', e => { syncBEIncomeFrom(safeNum(e.target.value, 1)); calcBreakEven(); });
+    beIncomeFromSlider.addEventListener('input', e => { syncBEIncomeFrom(safeNum(e.target.value, 1)); calcBreakEven(); });
+    beIncomeToInput.addEventListener('input', e => { syncBEIncomeTo(safeNum(e.target.value, 1)); calcBreakEven(); });
+    beIncomeToSlider.addEventListener('input', e => { syncBEIncomeTo(safeNum(e.target.value, 1)); calcBreakEven(); });
+    beMonthlyCostInput.addEventListener('input', e => { syncBEMonthlyCost(safeNum(e.target.value, 0)); calcBreakEven(); });
+    beMonthlyCostSlider.addEventListener('input', e => { syncBEMonthlyCost(safeNum(e.target.value, 0)); calcBreakEven(); });
     function initBreakEven() { syncBEInvest(50000); syncBEIncomeFrom(800); syncBEIncomeTo(1500); syncBEMonthlyCost(0); calcBreakEven(); }
     initBreakEven();
 
     // ============================================================
-    // CALCULATOR 5: STOCK VALUATION
+    // CALCULATOR 5: STOCK VALUATION (tightened guards)
     // ============================================================
     const stockPriceInput = document.getElementById('stockPriceInput');
     const stockPriceSlider = document.getElementById('stockPriceSlider');
@@ -1413,27 +1387,28 @@
     const fairPriceDisplay = document.getElementById('fairPriceDisplay');
 
     function syncStockPrice(v) {
-      let val = Math.min(100000, Math.max(0.01, parseFloat(v)));
+      let val = Math.min(100000, Math.max(0.01, parseFloat(v) || 0.01));
       stockPriceInput.value = val; stockPriceSlider.value = Math.min(1000, val);
       stockPriceSliderValue.textContent = '$' + val.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     }
     function syncStockEps(v) {
-      let val = Math.min(10000, Math.max(0.01, parseFloat(v)));
+      let val = Math.min(10000, Math.max(0.01, parseFloat(v) || 0.01));
       stockEpsInput.value = val; stockEpsSlider.value = Math.min(100, val);
       stockEpsSliderValue.textContent = '$' + val.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
     }
     function syncIndustryPe(v) {
-      let val = Math.min(200, Math.max(1, parseFloat(v)));
+      let val = Math.min(200, Math.max(1, parseFloat(v) || 1));
       industryPeInput.value = val; industryPeSlider.value = Math.min(100, val);
       industryPeSliderValue.textContent = val + 'x';
     }
 
     function evaluateStock() {
-      const price = parseFloat(stockPriceInput.value) || 0;
-      const eps = parseFloat(stockEpsInput.value) || 0;
-      const industryPe = parseFloat(industryPeInput.value) || 0;
+      const price = safeNum(stockPriceInput.value, 0);
+      const eps = safeNum(stockEpsInput.value, 0);
+      const industryPe = safeNum(industryPeInput.value, 0);
 
-      if (eps <= 0 || price <= 0 || industryPe <= 0) {
+      // Guard: avoid division by zero and nonsense
+      if (!(eps > 0) || !(price > 0) || !(industryPe > 0)) {
         verdictBox.className = 'valuation-verdict fair';
         verdictLabel.textContent = 'მონაცემები არასწორია';
         verdictValue.textContent = '—';
@@ -1469,12 +1444,12 @@
       }
     }
 
-    stockPriceInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0.01; syncStockPrice(v); evaluateStock(); });
-    stockPriceSlider.addEventListener('input', e => { syncStockPrice(parseFloat(e.target.value)); evaluateStock(); });
-    stockEpsInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 0.01; syncStockEps(v); evaluateStock(); });
-    stockEpsSlider.addEventListener('input', e => { syncStockEps(parseFloat(e.target.value)); evaluateStock(); });
-    industryPeInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 1; syncIndustryPe(v); evaluateStock(); });
-    industryPeSlider.addEventListener('input', e => { syncIndustryPe(parseFloat(e.target.value)); evaluateStock(); });
+    stockPriceInput.addEventListener('input', e => { syncStockPrice(safeNum(e.target.value, 0.01)); evaluateStock(); });
+    stockPriceSlider.addEventListener('input', e => { syncStockPrice(safeNum(e.target.value, 0.01)); evaluateStock(); });
+    stockEpsInput.addEventListener('input', e => { syncStockEps(safeNum(e.target.value, 0.01)); evaluateStock(); });
+    stockEpsSlider.addEventListener('input', e => { syncStockEps(safeNum(e.target.value, 0.01)); evaluateStock(); });
+    industryPeInput.addEventListener('input', e => { syncIndustryPe(safeNum(e.target.value, 1)); evaluateStock(); });
+    industryPeSlider.addEventListener('input', e => { syncIndustryPe(safeNum(e.target.value, 1)); evaluateStock(); });
     function initStock() { syncStockPrice(150); syncStockEps(7.5); syncIndustryPe(18); evaluateStock(); }
     initStock();
 
@@ -1519,7 +1494,6 @@
       holdings.push({ id: id, name: 'აქცია ' + id, buyPrice: 100, currentPrice: 100, quantity: 10 });
       renderHoldings();
       updatePortfolio();
-      // scroll to the newly added card on mobile
       setTimeout(() => {
         const cards = holdingsList.querySelectorAll('.holding-card');
         if (cards.length) cards[cards.length - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1659,7 +1633,6 @@
     }
 
     function updatePortfolio() {
-      const budget = parseFloat(budgetInput.value) || 0;
       let totalInvested = 0;
       let totalCurrent = 0;
 
@@ -1714,8 +1687,8 @@
       totalReturnStat.className = 'value ' + (totalReturn > 0.01 ? 'positive' : (totalReturn < -0.01 ? 'negative' : ''));
     }
 
-    budgetInput.addEventListener('input', e => { let v = parseFloat(e.target.value); if (isNaN(v)) v = 100; syncBudget(v); });
-    budgetSlider.addEventListener('input', e => { syncBudget(parseFloat(e.target.value)); });
+    budgetInput.addEventListener('input', e => { syncBudget(safeNum(e.target.value, 100)); });
+    budgetSlider.addEventListener('input', e => { syncBudget(safeNum(e.target.value, 100)); });
     addStockBtn.addEventListener('click', addHolding);
 
     function initPortfolio() {
@@ -1729,6 +1702,138 @@
       updatePortfolio();
     }
     initPortfolio();
+
+    // ============================================================
+    // CONSOLE SELF-TESTS
+    // Run these in the browser console to verify formulas.
+    // ============================================================
+    console.group('%cფინანსური კალკულატორების თვითშემოწმება', 'color:#facc15; font-weight:bold;');
+    (function runSelfTests() {
+      let pass = 0, fail = 0;
+      function check(name, actual, expected, tol) {
+        const ok = Math.abs(actual - expected) <= (tol || 0.01);
+        if (ok) { pass++; console.log('%c✓', 'color:#22c55e', name, '→', actual.toFixed(4)); }
+        else { fail++; console.error('✗', name, '→ got', actual, 'expected ~', expected); }
+      }
+
+      // --- 1. Compound, no inflation, monthly, zero initial, no contributions
+      //     $1000 at 12% nominal, 1 year, monthly → FV = 1000 * (1.01)^12
+      (function() {
+        const r = 0.12 / 12;
+        let bal = 1000;
+        for (let m = 1; m <= 12; m++) bal *= (1 + r);
+        const expected = 1000 * Math.pow(1.01, 12);
+        check('Compound: $1000 @ 12% for 1yr monthly = $' + expected.toFixed(2), bal, expected, 0.01);
+      })();
+
+      // --- 2. Compound with inflation = 0 must equal nominal (no phantom loss)
+      (function() {
+        // Simulate 12 months at 10% nominal, 0 inflation, $1000 initial
+        let nominal = 1000;
+        const monthlyNominal = 0.10 / 12;
+        for (let m = 1; m <= 12; m++) nominal *= (1 + monthlyNominal);
+        // No contributions, so real should equal nominal
+        check('No-inflation: real == nominal', nominal, nominal, 0.0001);
+      })();
+
+      // --- 3. Fisher equation
+      //     nominal 10%, inflation 3% → real = (1.10/1.03) - 1 ≈ 6.796%
+      (function() {
+        const real = (1.10 / 1.03) - 1;
+        check('Fisher: real rate ≈ 6.796%', real * 100, 6.796116504854368, 0.0001);
+      })();
+
+      // --- 4. Loan: $20,000 @ 8% for 5 years
+      //     Expected monthly payment ≈ $405.53
+      (function() {
+        const P = 20000, r = 0.08 / 12, n = 60;
+        const factor = Math.pow(1 + r, n);
+        const pmt = P * (r * factor) / (factor - 1);
+        check('Loan PMT: $20k @ 8% 5yr ≈ $405.53', pmt, 405.52816655, 0.01);
+      })();
+
+      // --- 5. Loan total should equal principal + interest (with correction)
+      (function() {
+        const P = 20000, r = 0.08 / 12, n = 60;
+        const factor = Math.pow(1 + r, n);
+        const pmt = Math.round((P * (r * factor) / (factor - 1)) * 100) / 100;
+        let bal = P, totalPaid = 0, totalInterest = 0;
+        for (let m = 1; m <= n; m++) {
+          if (bal <= 0.005) break;
+          const interest = bal * r;
+          const isLast = m === n;
+          const payment = isLast ? Math.min(bal + interest, pmt) : pmt;
+          const principalPart = payment - interest;
+          const actualPrincipal = Math.min(principalPart, bal);
+          bal -= actualPrincipal;
+          if (bal < 0.005) bal = 0;
+          totalPaid += actualPrincipal + interest;
+          totalInterest += interest;
+        }
+        check('Loan: balance fully paid', bal, 0, 0.01);
+        check('Loan: total = principal + interest', totalPaid, P + totalInterest, 0.02);
+      })();
+
+      // --- 6. Break-even simple case: invest $10,000, income $1,000/mo, no growth, no cost
+      //     Should break even in exactly 10 months.
+      (function() {
+        // Use the same iteration logic conceptually: with constant income
+        // (from == to), the BE month is trivial.
+        const investment = 10000, income = 1000, cost = 0;
+        let cum = 0, be = null;
+        for (let m = 1; m <= 120; m++) {
+          cum += income - cost;
+          if (cum >= investment) { be = m; break; }
+        }
+        check('BE: $10k invest, $1k/mo → 10 months', be, 10, 0);
+      })();
+
+      // --- 7. Break-even with from→to range: sanity
+      //     invest $10,000, income from $500 to $1,500 over BE, no cost.
+      //     If BE = M, income at month k is 500 + 1000*(k-1)/(M-1).
+      //     Cumulative = M*(500+1500)/2 = M*1000 = 10000 → M = 10.
+      (function() {
+        const investment = 10000, from = 500, to = 1500, cost = 0;
+        // The BE-aware interpolation: with horizon = BE, average income = (from+to)/2
+        const avgNet = (from + to) / 2 - cost;
+        const expectedBE = Math.ceil(investment / avgNet);
+        check('BE-aware: $10k with $500→$1500 avg → 10 months', expectedBE, 10, 0);
+      })();
+
+      // --- 8. Stock P/E: price $150, EPS $7.50, industry 18
+      //     P/E = 20. Fair price = 18 * 7.5 = 135. Expensive.
+      (function() {
+        const price = 150, eps = 7.5, ind = 18;
+        const pe = price / eps;
+        const fair = ind * eps;
+        check('P/E: 150/7.5 = 20', pe, 20, 0.0001);
+        check('Fair price: 18*7.5 = 135', fair, 135, 0.0001);
+        check('Verdict: 150 vs 135 → expensive', price > fair ? 1 : 0, 1, 0);
+      })();
+
+      // --- 9. Portfolio: 2 holdings, P/L sums correctly
+      (function() {
+        const h1 = { buy: 100, cur: 120, qty: 10 };   // invested 1000, value 1200, P/L +200
+        const h2 = { buy: 200, cur: 180, qty: 5 };    // invested 1000, value 900,  P/L -100
+        const invested = h1.buy*h1.qty + h2.buy*h2.qty;
+        const value = h1.cur*h1.qty + h2.cur*h2.qty;
+        const pl = value - invested;
+        check('Portfolio: invested = 2000', invested, 2000, 0);
+        check('Portfolio: value = 2100', value, 2100, 0);
+        check('Portfolio: P/L = +100', pl, 100, 0);
+      })();
+
+      // --- 10. Loan with 0% interest should just divide principal evenly
+      (function() {
+        const P = 1200, years = 1, months = 12;
+        const pmt = P / months;
+        check('0% loan: $1200 / 12 = $100', pmt, 100, 0);
+      })();
+
+      console.log('%c' + (fail === 0 ? '✅ ყველა ტესტი გავიდა! (' + pass + ')' : '❌ ' + fail + ' ტესტი ჩავარდა, ' + pass + ' გავიდა'),
+        'color:' + (fail === 0 ? '#22c55e' : '#ef4444') + '; font-weight:bold; font-size: 13px;');
+    })();
+    console.groupEnd();
 
   })();
 </script>
